@@ -1,18 +1,20 @@
-import threading
+import contextvars
 from google.oauth2.credentials import Credentials
 from google.auth.transport.requests import Request
 import json
 
-# Thread-local storage for credentials
-_thread_local = threading.local()
+# Context variable for credentials (works with asyncio)
+_user_credentials: contextvars.ContextVar[Credentials | None] = contextvars.ContextVar(
+    'user_credentials', default=None
+)
 
 def set_user_credentials(creds):
-    """Set credentials for the current thread/user"""
-    _thread_local.creds = creds
+    """Set credentials for the current async task/user"""
+    _user_credentials.set(creds)
 
 def get_user_credentials():
-    """Get credentials for the current thread/user"""
-    return getattr(_thread_local, 'creds', None)
+    """Get credentials for the current async task/user"""
+    return _user_credentials.get()
 
 def get_credentials_from_db(token_json_str):
     """Load credentials from database token JSON string"""

@@ -119,17 +119,17 @@ async def run_session(
 # -------------------------------------------------------------------
 # Main Runner
 # -------------------------------------------------------------------
-async def main():
-    runner = Runner(
-        agent=meeting_reminder_agent,
-        app_name=APP_NAME,
-        session_service=session_service
-    )
+# async def main():
+#     runner = Runner(
+#         agent=meeting_reminder_agent,
+#         app_name=APP_NAME,
+#         session_service=session_service
+#     )
 
-    await run_session(
-        runner,
-        user_queries="Get the user's meetings for tomorrow and send a summarized email to the user",
-        session_name="demo_session"
-    )
+#     await run_session(
+#         runner,
+#         user_queries="Get the user's meetings for tomorrow and send a summarized email to the user",
+#         session_name="demo_session"
+#     )
 
-asyncio.run(main())
+# asyncio.run(main())

@@ -20,6 +20,3 @@ htmlcov/
 dist/
 build/
 *.egg-info/
-users.db
-db.sqlite3
-view_users.py

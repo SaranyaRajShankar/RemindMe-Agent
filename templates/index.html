@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemindMe Agent - Dashboard</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📅 RemindMe Agent</h1>
+            <p class="subtitle">Automated Meeting Reminders</p>
+        </header>
+
+        <div class="card">
+            <h2>Connect Your Google Account</h2>
+            <p>Connect your Google account to start receiving automated meeting reminders via email.</p>
+            <button id="connectBtn" class="btn btn-primary">
+                <span class="btn-icon">🔗</span>
+                Connect Google Account
+            </button>
+        </div>
+
+        <!-- <div class="card">
+            <div class="card-header">
+                <h2>Connected Accounts</h2>
+                <button id="refreshBtn" class="btn btn-secondary">🔄 Refresh</button>
+            </div>
+            <div id="usersList" class="users-list">
+                <div class="loading">Loading users...</div>
+            </div>
+        </div> -->
+    </div>
+
+    <script src="{% static 'script.js' %}"></script>
+</body>
+</html>
+
